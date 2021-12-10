@@ -1,0 +1,179 @@
+
+#include <iostream>
+#include<conio.h>
+#include<windows.h>
+using namespace std;
+
+class Account
+{
+
+
+private:
+    int account,account1;
+    char name[15];
+    int balance;
+public:
+    void menu1()
+    {
+        int y;
+        cout<<"01.create account"<<endl;
+        cout<<"02.LOGIN TO ACCOUNT"<<endl;
+
+
+        cin>>y;
+
+        switch(y)
+        {
+        case 1:
+            {
+                CreateAccount();
+                 cout<<"\n\n";
+                cout<<"01.DEPOSIT"<<endl;
+                cout<<"02.WITHDROWAL"<<endl;
+                cout<<"ENTER YOUR CHOICE";
+
+                cin>>z;
+
+                switch(z)
+                {
+                    case 1:
+                        {
+                            Deposit()
+                        }
+                    break;
+                    case 2:
+                        {
+//                            cout<<with
+                        }
+                    break;
+                     default:
+            {
+                cout<<"Enter valid value"<<endl;
+            }
+        }
+                menu1();
+            }
+            break;
+        case 2:
+            {
+                ShowAccount();
+
+                }
+
+
+//                 menu1();
+            }
+            break;
+//        case 3:
+//            {
+//                Deposit();
+//                 menu1();
+//            }
+
+            default:
+            {
+                cout<<"Enter valid value"<<endl;
+            }
+        }
+
+    }
+    void CreateAccount()
+    {
+        system("cls");
+        cout<<"Enter Account Number :";
+        cin>>account;
+        cout<<"Enter Account Name ";
+        cin>>name;
+        cout<<"Enter Account Balance :";
+        cin>>balance;
+        cout<<"Acount Successfully Created "<<endl;
+    }
+    void ShowAccount()
+    {
+        system("cls");
+        cout<<"Enter Account Number"<<endl;
+        cin>>account1;
+
+        if(account==account1)
+        {
+            cout<<"login Successfully"<<endl;
+
+            cout<<"Account Name :"<<name<<endl;
+            cout<<"Account Balance :"<<balance<<endl;
+            cout<<"Account Number :"<<account<<endl;
+
+        }else
+        {
+            cout<<"login failed__!"<<endl;
+        }
+        getch();
+
+    }
+    void Deposit()
+    {
+       int depo;
+       cout<<"Enter Amount you Want deposit ";
+       cin>>depo;
+       cout<<"In Total Your Account"<<balance+depo<<endl;
+    }
+
+};
+
+void menu()
+{
+    int x;
+    cout<<"menu"<<endl;
+    cout<<"01.account"<<endl;
+    cout<<"02.lons"<<endl;
+    cout<<"03.employs"<<endl;
+    cout<<"ENTER YOUR CHOICE"<<endl;
+    cin>>x;
+
+    switch(x)
+    {
+
+
+
+        case 1:
+              {
+                  Account obj1;
+                  obj1.menu1();
+                  system("cls");
+                  menu();
+              }
+
+
+              break;
+
+
+        case 2:
+              {
+
+               menu();
+              }
+               break;
+        case 3:
+//               paying_bills();
+               break;
+        case 4:
+//               delete_account();
+               break;
+        case 5:
+               exit(0);
+
+
+        default:
+                cout<<"PLEASE ENTER CORRECT VALUE"<<endl;
+                Sleep(1000);
+                system("cls");
+                menu();
+    }
+
+}
+
+int main()
+{
+    menu();
+
+    return 0;
+}
